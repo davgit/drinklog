@@ -22,6 +22,8 @@
 		4C31CC70197AE4DF00D3FC34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C31CC4F197AE4DF00D3FC34 /* UIKit.framework */; };
 		4C31CC78197AE4DF00D3FC34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C31CC76197AE4DF00D3FC34 /* InfoPlist.strings */; };
 		4C31CC7A197AE4DF00D3FC34 /* FluidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC79197AE4DF00D3FC34 /* FluidsTests.m */; };
+		4C31CC88197AFB9700D3FC34 /* BGMLogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC87197AFB9700D3FC34 /* BGMLogEntry.m */; };
+		4C31CC8B197AFDFE00D3FC34 /* BGMEntryEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC8A197AFDFE00D3FC34 /* BGMEntryEditingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,12 @@
 		4C31CC75197AE4DF00D3FC34 /* FluidsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FluidsTests-Info.plist"; sourceTree = "<group>"; };
 		4C31CC77197AE4DF00D3FC34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C31CC79197AE4DF00D3FC34 /* FluidsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluidsTests.m; sourceTree = "<group>"; };
+		4C31CC86197AFB9700D3FC34 /* BGMLogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMLogEntry.h; sourceTree = "<group>"; };
+		4C31CC87197AFB9700D3FC34 /* BGMLogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMLogEntry.m; sourceTree = "<group>"; };
+		4C31CC89197AFDFE00D3FC34 /* BGMEntryEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMEntryEditingViewController.h; sourceTree = "<group>"; };
+		4C31CC8A197AFDFE00D3FC34 /* BGMEntryEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMEntryEditingViewController.m; sourceTree = "<group>"; };
+		4C31CC8C197B1C2B00D3FC34 /* BGMLogEntryCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMLogEntryCreator.h; sourceTree = "<group>"; };
+		4C31CC8E197B1D3900D3FC34 /* BGMLogEntryDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGMLogEntryDescription.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +126,14 @@
 				4C31CC5A197AE4DF00D3FC34 /* BGMAppDelegate.h */,
 				4C31CC5B197AE4DF00D3FC34 /* BGMAppDelegate.m */,
 				4C31CC5D197AE4DF00D3FC34 /* Main.storyboard */,
+				4C31CC8C197B1C2B00D3FC34 /* BGMLogEntryCreator.h */,
+				4C31CC8E197B1D3900D3FC34 /* BGMLogEntryDescription.h */,
 				4C31CC60197AE4DF00D3FC34 /* BGMMasterViewController.h */,
 				4C31CC61197AE4DF00D3FC34 /* BGMMasterViewController.m */,
+				4C31CC89197AFDFE00D3FC34 /* BGMEntryEditingViewController.h */,
+				4C31CC8A197AFDFE00D3FC34 /* BGMEntryEditingViewController.m */,
+				4C31CC86197AFB9700D3FC34 /* BGMLogEntry.h */,
+				4C31CC87197AFB9700D3FC34 /* BGMLogEntry.m */,
 				4C31CC63197AE4DF00D3FC34 /* BGMDetailViewController.h */,
 				4C31CC64197AE4DF00D3FC34 /* BGMDetailViewController.m */,
 				4C31CC66197AE4DF00D3FC34 /* Images.xcassets */,
@@ -256,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C31CC65197AE4DF00D3FC34 /* BGMDetailViewController.m in Sources */,
+				4C31CC8B197AFDFE00D3FC34 /* BGMEntryEditingViewController.m in Sources */,
 				4C31CC62197AE4DF00D3FC34 /* BGMMasterViewController.m in Sources */,
+				4C31CC88197AFB9700D3FC34 /* BGMLogEntry.m in Sources */,
 				4C31CC58197AE4DF00D3FC34 /* main.m in Sources */,
 				4C31CC5C197AE4DF00D3FC34 /* BGMAppDelegate.m in Sources */,
 			);

@@ -9,6 +9,8 @@
 #import "BGMMasterViewController.h"
 
 #import "BGMDetailViewController.h"
+#import "BGMEntryEditingViewController.h"
+#import "BGMLogEntry.h"
 
 @interface BGMMasterViewController () {
     NSMutableArray *_objects;
@@ -26,10 +28,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,12 +36,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
+- (void)createNewLogEntry:(id<BGMLogEntryDescription>)sender {
+    BGMLogEntry *entry = [[BGMLogEntry alloc] initFromDescription:sender];
+    [self insertNewLogEntry:entry];
+}
+
+- (void)insertNewLogEntry:(BGMLogEntry *)entry {
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_objects insertObject:entry atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -105,8 +107,10 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        BGMLogEntry *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    } else if ([[segue identifier] isEqualToString:@"showEntryEditingView"]) {
+        [[segue destinationViewController] setEntryCreationDelegate:self];
     }
 }
 

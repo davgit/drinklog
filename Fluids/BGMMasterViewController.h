@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BGMLogEntryCreator.h"
 
-@interface BGMMasterViewController : UITableViewController
-
+@interface BGMMasterViewController : UITableViewController<BGMLogEntryCreator>
 @end
