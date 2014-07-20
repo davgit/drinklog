@@ -11,9 +11,10 @@
 #import "BGMDetailViewController.h"
 #import "BGMEntryEditingViewController.h"
 #import "BGMLogEntry.h"
+#import "BGMPersistenceManager.h"
 
 @interface BGMMasterViewController () {
-    NSMutableArray *_objects;
+    NSMutableArray *entries;
 }
 @end
 
@@ -22,12 +23,18 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    entries = [[BGMPersistenceManager retrieveLogEntryCollection] mutableCopy];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [BGMPersistenceManager persistLogEntryCollection:entries];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,10 +49,10 @@
 }
 
 - (void)insertNewLogEntry:(BGMLogEntry *)entry {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+    if (!entries) {
+        entries = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:entry atIndex:0];
+    [entries insertObject:entry atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -59,14 +66,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return entries.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    BGMLogEntry *entry = _objects[indexPath.row];
+    BGMLogEntry *entry = entries[indexPath.row];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
@@ -85,7 +92,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [entries removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -112,7 +119,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        BGMLogEntry *object = _objects[indexPath.row];
+        BGMLogEntry *object = entries[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     } else if ([[segue identifier] isEqualToString:@"showEntryEditingView"]) {
         [[segue destinationViewController] setEntryCreationDelegate:self];

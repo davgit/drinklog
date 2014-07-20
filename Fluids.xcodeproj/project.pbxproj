@@ -24,6 +24,7 @@
 		4C31CC7A197AE4DF00D3FC34 /* FluidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC79197AE4DF00D3FC34 /* FluidsTests.m */; };
 		4C31CC88197AFB9700D3FC34 /* BGMLogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC87197AFB9700D3FC34 /* BGMLogEntry.m */; };
 		4C31CC8B197AFDFE00D3FC34 /* BGMEntryEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC8A197AFDFE00D3FC34 /* BGMEntryEditingViewController.m */; };
+		4C31CC91197B884600D3FC34 /* BGMPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC90197B884600D3FC34 /* BGMPersistenceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		4C31CC8A197AFDFE00D3FC34 /* BGMEntryEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMEntryEditingViewController.m; sourceTree = "<group>"; };
 		4C31CC8C197B1C2B00D3FC34 /* BGMLogEntryCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMLogEntryCreator.h; sourceTree = "<group>"; };
 		4C31CC8E197B1D3900D3FC34 /* BGMLogEntryDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGMLogEntryDescription.h; sourceTree = "<group>"; };
+		4C31CC8F197B884600D3FC34 /* BGMPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMPersistenceManager.h; sourceTree = "<group>"; };
+		4C31CC90197B884600D3FC34 /* BGMPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMPersistenceManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				4C31CC5A197AE4DF00D3FC34 /* BGMAppDelegate.h */,
 				4C31CC5B197AE4DF00D3FC34 /* BGMAppDelegate.m */,
 				4C31CC5D197AE4DF00D3FC34 /* Main.storyboard */,
+				4C31CC8F197B884600D3FC34 /* BGMPersistenceManager.h */,
+				4C31CC90197B884600D3FC34 /* BGMPersistenceManager.m */,
 				4C31CC8C197B1C2B00D3FC34 /* BGMLogEntryCreator.h */,
 				4C31CC8E197B1D3900D3FC34 /* BGMLogEntryDescription.h */,
 				4C31CC60197AE4DF00D3FC34 /* BGMMasterViewController.h */,
@@ -275,6 +280,7 @@
 				4C31CC65197AE4DF00D3FC34 /* BGMDetailViewController.m in Sources */,
 				4C31CC8B197AFDFE00D3FC34 /* BGMEntryEditingViewController.m in Sources */,
 				4C31CC62197AE4DF00D3FC34 /* BGMMasterViewController.m in Sources */,
+				4C31CC91197B884600D3FC34 /* BGMPersistenceManager.m in Sources */,
 				4C31CC88197AFB9700D3FC34 /* BGMLogEntry.m in Sources */,
 				4C31CC58197AE4DF00D3FC34 /* main.m in Sources */,
 				4C31CC5C197AE4DF00D3FC34 /* BGMAppDelegate.m in Sources */,

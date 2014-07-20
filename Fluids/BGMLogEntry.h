@@ -15,4 +15,5 @@
 @property (strong, nonatomic) NSDate* drinkTime;
 + (NSString *) descriptionForDrinkType:(DrinkType)drinkType;
 - (id) initFromDescription:(id<BGMLogEntryDescription>)description;
+- (NSDictionary *)dictionaryRepresentation;
 @end
