@@ -1,4 +1,6 @@
-(ns visualization.core)
+(ns visualization.core
+  (:require 
+    [figwheel.client :as figwheel :include-macros true]))
 
 (enable-console-print!)
 
@@ -15,3 +17,7 @@
 (defn chart-line [values]
   ;; TODO: d3 svg graphics
   )
+
+(figwheel/watch-and-reload
+  ;; :websocket-url "ws://localhost:3449/figwheel-ws" default
+  :jsload-callback (fn [] (print "reloaded"))) ;; optional callback
