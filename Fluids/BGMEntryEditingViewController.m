@@ -12,12 +12,12 @@
 @interface BGMEntryEditingViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *drinkTypePicker;
 @property (weak, nonatomic) IBOutlet UILabel *drinkAmountLabel;
-
+@property (strong, nonatomic) NSDate *currentDate;
 @end
 
 @implementation BGMEntryEditingViewController
 - (NSDate *)drinkTime {
-    return [NSDate date]; // temporary
+    return _currentDate;
 }
 - (DrinkType)drinkType {
     return (DrinkType)[self.drinkTypePicker selectedRowInComponent:0];
@@ -27,7 +27,8 @@
 }
 
 - (IBAction)drinkAmountStepperPressed:(UIStepper *)sender {
-    self.drinkAmountLabel.text = [NSString stringWithFormat:@"%f", sender.value];
+    NSInteger stepperValue = [[NSNumber numberWithFloat:sender.value] integerValue];
+    self.drinkAmountLabel.text = [NSString stringWithFormat:@"%d", stepperValue];
     
 }
 
@@ -49,6 +50,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _currentDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    
+    self.dateLabel.text = [dateFormatter stringFromDate:_currentDate];    
 }
 
 - (void)didReceiveMemoryWarning

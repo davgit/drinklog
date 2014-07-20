@@ -12,4 +12,5 @@
 
 @interface BGMEntryEditingViewController : UIViewController<BGMLogEntryDescription, UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) id<BGMLogEntryCreator> entryCreationDelegate;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @end

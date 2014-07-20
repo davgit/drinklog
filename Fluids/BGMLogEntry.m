@@ -36,6 +36,10 @@
             return @"milk";
         case Soda:
             return @"soda";
+        case Water:
+            return @"water";
+        default:
+            return @"unknown";
     }
 }
 

@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#define NUM_DRINK_TYPES 6
+#define NUM_DRINK_TYPES 7
 typedef enum : NSUInteger {
     Coffee,
+    Water,
     Soda,
     Beer,
     Tea,

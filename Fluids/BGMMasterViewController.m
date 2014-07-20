@@ -66,8 +66,13 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    BGMLogEntry *entry = _objects[indexPath.row];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    cell.textLabel.text = [entry description];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:[entry drinkTime]];
     return cell;
 }
 
