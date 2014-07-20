@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Adhesive Buck. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface BGMDataVizViewController : NSObject
+@interface BGMDataVizViewController : UIViewController
 
 @end

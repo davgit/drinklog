@@ -28,7 +28,7 @@
 
 - (IBAction)drinkAmountStepperPressed:(UIStepper *)sender {
     NSInteger stepperValue = [[NSNumber numberWithFloat:sender.value] integerValue];
-    self.drinkAmountLabel.text = [NSString stringWithFormat:@"%d", stepperValue];
+    self.drinkAmountLabel.text = [NSString stringWithFormat:@"%ld", (long)stepperValue];
     
 }
 

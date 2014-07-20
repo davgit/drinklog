@@ -8,7 +8,6 @@
 
 #import "BGMMasterViewController.h"
 
-#import "BGMDetailViewController.h"
 #import "BGMEntryEditingViewController.h"
 #import "BGMLogEntry.h"
 #import "BGMPersistenceManager.h"
@@ -117,11 +116,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        BGMLogEntry *object = entries[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    } else if ([[segue identifier] isEqualToString:@"showEntryEditingView"]) {
+    if ([[segue identifier] isEqualToString:@"showEntryEditingView"]) {
         [[segue destinationViewController] setEntryCreationDelegate:self];
     }
 }
