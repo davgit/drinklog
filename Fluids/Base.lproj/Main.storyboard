@@ -50,9 +50,25 @@
                     <view key="view" contentMode="scaleToFill" id="yOs-El-1Kk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwC-At-AdS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GwC-At-AdS" firstAttribute="top" secondItem="i5s-4h-SZN" secondAttribute="bottom" constant="-20" id="IQC-ax-EXa"/>
+                            <constraint firstItem="jRL-PO-ld3" firstAttribute="top" secondItem="GwC-At-AdS" secondAttribute="bottom" constant="1" id="O94-vm-TTo"/>
+                            <constraint firstItem="GwC-At-AdS" firstAttribute="leading" secondItem="yOs-El-1Kk" secondAttribute="leading" id="V28-5d-Ffh"/>
+                            <constraint firstAttribute="trailing" secondItem="GwC-At-AdS" secondAttribute="trailing" id="nua-di-cWE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Graphs" id="L9B-EB-IHR"/>
+                    <connections>
+                        <outlet property="chartView" destination="GwC-At-AdS" id="L3Z-5B-VbH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHE-Kk-bI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

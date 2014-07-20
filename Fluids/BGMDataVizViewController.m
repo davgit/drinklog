@@ -9,7 +9,7 @@
 #import "BGMDataVizViewController.h"
 
 @interface BGMDataVizViewController ()
-
+@property (weak, nonatomic) IBOutlet UIWebView *chartView;
 @end
 
 @implementation BGMDataVizViewController
@@ -27,8 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    id path = [[NSBundle mainBundle] pathForResource:@"public/index" ofType:@"html"];
-    NSLog(@"%@", path);
+    NSURL *chartURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"public/index" ofType:@"html"]];
+    [self.chartView loadRequest:[NSURLRequest requestWithURL:chartURL]];
 }
 
 - (void)didReceiveMemoryWarning

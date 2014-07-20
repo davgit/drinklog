@@ -18,6 +18,8 @@
   ;; TODO: d3 svg graphics
   )
 
+(chart-frame 200)
+
 (figwheel/watch-and-reload
   ;; :websocket-url "ws://localhost:3449/figwheel-ws" default
   :jsload-callback (fn [] (print "reloaded"))) ;; optional callback
