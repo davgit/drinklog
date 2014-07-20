@@ -2,7 +2,8 @@
 
 (enable-console-print!)
 
-(defn chart-frame [x y size]
+(def chart-values [7 8 5 3])
+(defn chart-frame [size]
   (-> js/document 
       (.getElementById "container")
       (aset "innerHTML" "<div id='chart'></div>"))
@@ -11,6 +12,6 @@
       (.style "border-bottom" "solid black")
       (.style "width" (str size))
       (.style "height" (str size))))
-      
-
-(.log js/console (chart-frame nil nil 200))
+(defn chart-line [values]
+  ;; TODO: d3 svg graphics
+  )
