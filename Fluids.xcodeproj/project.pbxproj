@@ -25,6 +25,7 @@
 		4C31CC8B197AFDFE00D3FC34 /* BGMEntryEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC8A197AFDFE00D3FC34 /* BGMEntryEditingViewController.m */; };
 		4C31CC91197B884600D3FC34 /* BGMPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C31CC90197B884600D3FC34 /* BGMPersistenceManager.m */; };
 		4CB99255197BE17600E9EBA1 /* BGMDataVizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB99254197BE17600E9EBA1 /* BGMDataVizViewController.m */; };
+		4CB99257197BE2D300E9EBA1 /* public in Resources */ = {isa = PBXBuildFile; fileRef = 4CB99256197BE2D300E9EBA1 /* public */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		4C31CC90197B884600D3FC34 /* BGMPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMPersistenceManager.m; sourceTree = "<group>"; };
 		4CB99253197BE17600E9EBA1 /* BGMDataVizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMDataVizViewController.h; sourceTree = "<group>"; };
 		4CB99254197BE17600E9EBA1 /* BGMDataVizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMDataVizViewController.m; sourceTree = "<group>"; };
+		4CB99256197BE2D300E9EBA1 /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; name = public; path = visualization/resources/public; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		4C31CC51197AE4DF00D3FC34 /* Fluids */ = {
 			isa = PBXGroup;
 			children = (
+				4CB99256197BE2D300E9EBA1 /* public */,
 				4C31CC5A197AE4DF00D3FC34 /* BGMAppDelegate.h */,
 				4C31CC5B197AE4DF00D3FC34 /* BGMAppDelegate.m */,
 				4C31CC5D197AE4DF00D3FC34 /* Main.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C31CC67197AE4DF00D3FC34 /* Images.xcassets in Resources */,
+				4CB99257197BE2D300E9EBA1 /* public in Resources */,
 				4C31CC56197AE4DF00D3FC34 /* InfoPlist.strings in Resources */,
 				4C31CC5F197AE4DF00D3FC34 /* Main.storyboard in Resources */,
 			);

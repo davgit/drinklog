@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    id path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    id path = [[NSBundle mainBundle] pathForResource:@"public/index" ofType:@"html"];
     NSLog(@"%@", path);
 }
 
